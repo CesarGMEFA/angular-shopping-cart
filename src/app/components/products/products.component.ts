@@ -18,9 +18,8 @@ export class ProductsComponent implements OnInit {
 
   total = 0
   shoppingCart: Product[] = []
-  today = new Date()
   date = new Date('2022, 09, 16')
-  
+
   constructor(
     private storeService: StoreService,
     private productsService: ProductsService
@@ -32,12 +31,12 @@ export class ProductsComponent implements OnInit {
     this.storeService.addProduct(p)
     this.total = this.storeService.getTotal()
   }
-  
+
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe(data => {
       this.products = data
     })
   }
-  
+
 
 }
