@@ -1,0 +1,31 @@
+h2, p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.product {
+  width: 280px;
+  margin-bottom: 20px;
+  &_price {
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  &_title {
+    width: 280px;
+    height: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &_description {
+    text-overflow:ellipsis;
+    overflow:hidden;
+    // Addition lines for 2 line or multiline ellipsis
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+}
+

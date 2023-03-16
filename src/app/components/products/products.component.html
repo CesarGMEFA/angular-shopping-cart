@@ -1,0 +1,17 @@
+<p>
+  Carrito: {{ shoppingCart.length }}
+</p>
+<p>
+  Total: {{ total }}
+</p>
+<p>
+  Time ago: {{ date | timeAgo}}
+</p>
+
+<section class="products--grid">
+  <app-product
+    [theItem]="product"
+    *ngFor="let product of products"
+    (addedProduct)="onAddToShoppingCart($event)"
+  ></app-product>
+</section>

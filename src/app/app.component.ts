@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'store-example';
+
+  imgParent = 'https://www.w3schools.com/howto/img_avatar.png';
+  showImg = true
+
+  loadedFather(img: string) {
+    console.log('father log', img)
+  }
+
+  toggleImg() {
+    this.showImg = !this.showImg
+  }
 }
