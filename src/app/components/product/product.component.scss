@@ -19,6 +19,7 @@ h2, p {
     white-space: nowrap;
   }
   &_description {
+    color: var(--gray);
     text-overflow:ellipsis;
     overflow:hidden;
     // Addition lines for 2 line or multiline ellipsis
