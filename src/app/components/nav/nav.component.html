@@ -3,11 +3,11 @@
     <button (click)="toggleMenu()" >
       <img src="./assets/svg/icon_menu.svg" alt="menu">
     </button>
-    <a class="logo" href="/">
+    <a class="logo" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
       <p>TIENDA</p>
     </a>
     <div class="cart">
-      <a href="">
+      <a routerLink="cart" routerLinkActive="active" ariaCurrentWhenActive="page">
         <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
       </a>
       <span class="counter" >{{ counter }}</span>
@@ -26,19 +26,19 @@
 <div class="hide-mobile">
   <div>
     <nav>
-      <a class="logo logo-desktop" href="/">
+      <a class="logo logo-desktop" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
         <P>TIENDA</P>
       </a>
       <ul>
-        <li><a href="">All</a></li>
-        <li><a href="">Clothes</a></li>
+        <li><a href="#">All</a></li>
+        <li><a href="#">Clothes</a></li>
         <li><a href="">Electronics</a></li>
       </ul>
     </nav>
     <div class="info">
       <div class="account">cesarfar376@gmail.com</div>
       <div class="cart">
-        <a href="">
+        <a routerLink="cart" routerLinkActive="active" ariaCurrentWhenActive="page">
           <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
         </a>
         <span class="counter" >{{ counter }}</span>

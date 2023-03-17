@@ -10,6 +10,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductsComponent } from './components/products/products.component';
 import { NavComponent } from './components/nav/nav.component';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     ProductsComponent,
     NavComponent,
     TimeAgoPipe,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
