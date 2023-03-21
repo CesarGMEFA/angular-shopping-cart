@@ -15,27 +15,21 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
-
-  total = 0
-  shoppingCart: Product[] = []
   date = new Date('2022, 09, 16')
 
   constructor(
     private storeService: StoreService,
     private productsService: ProductsService
   ) {
-    this.shoppingCart = this.storeService.getShoppingCart()
   }
 
   onAddToShoppingCart(p: Product) {
-    this.storeService.addProduct(p)
-    this.total = this.storeService.getTotal()
+    this.storeService.addProductToShoppingCart(p)
   }
 
   ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe(data => {
+    this.productsService.getAllProducts(0, 20).subscribe(data => {
       this.products = data
-      console.log("data => ",data)
     })
   }
 
