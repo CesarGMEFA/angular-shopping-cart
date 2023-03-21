@@ -12,7 +12,8 @@ export class ProductsService {
     private http: HttpClient
   ) { }
 
-  getAllProducts() {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products')
+  getAllProducts(offset: number, limit: number) {
+    // return this.http.get<Product[]>('https://fakestoreapi.com/products')
+    return this.http.get<Product[]>('https://api.escuelajs.co/api/v1/products', {params: {offset, limit}})
   }
 }

@@ -1,29 +1,60 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 import { Product } from 'src/app/interfaces/product.interface';
+
+// services
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
 
   // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input("theItem") product: Product = {
     id: 0.00,
     title: '',
-    image: '',
+    images: [''],
     price: 0.00,
     description: '',
-    category: ''
+    category: {
+      id: 0,
+      name: '',
+      image: '',
+      creationAt: '',
+      updatedAt: ''
+    }
   }
-  @Output() addedProduct = new EventEmitter<Product>();
+  addedProduct: boolean = false;
+  @Output() addProduct = new EventEmitter<Product>();
 
-  constructor() { }
+  constructor(
+    private storeService: StoreService
+  ) {}
 
+  ngOnInit() {
+    this.checkingProductInCart()
+  }
   onAddToCart() {
-    this.addedProduct.emit(this.product)
+    const verification = this.storeService.checkingProductInCart(this.product)
+    if ( !verification ) {
+      this.addProduct.emit(this.product)
+      this.addedProduct = true
+    } else {
+      this.addProduct.emit(this.product)
+      this.addedProduct = false
+    }
+  }
+
+  checkingProductInCart() {
+    const verification = this.storeService.checkingProductInCart(this.product)
+    if (!verification) {
+      this.addedProduct = false
+    } else {
+      this.addedProduct = true
+    }
   }
 
 }

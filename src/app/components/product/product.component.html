@@ -1,9 +1,12 @@
 <div class="product">
-  <app-img [changeImg]="product.image"></app-img>
+  <app-img [changeImg]="product.images[0]"></app-img>
   <h2 class="product_price" >{{product.price | currency:"USD"}}</h2>
   <p class="product_title" >{{product.title}}</p>
   <p class="product_description">
     {{ product.description }}
   <p>
-  <button class="product_button" (click)="onAddToCart()" >Add cart</button>
+  <div class="product_cart" (click)="onAddToCart()">
+    <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+    <span class="counter" *ngIf="addedProduct">✔</span>
+  </div>
 </div>
