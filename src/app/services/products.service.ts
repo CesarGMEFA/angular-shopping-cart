@@ -4,16 +4,16 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from '../interfaces/product.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductsService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getAllProducts(offset: number, limit: number) {
     // return this.http.get<Product[]>('https://fakestoreapi.com/products')
-    return this.http.get<Product[]>('https://api.escuelajs.co/api/v1/products', {params: {offset, limit}})
+    return this.http.get<Product[]>(
+      'https://api.escuelajs.co/api/v1/products',
+      { params: { offset, limit } }
+    );
   }
 }

@@ -11,6 +11,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { NavComponent } from './components/nav/nav.component';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CartComponent } from './components/cart/cart.component';
     NavComponent,
     TimeAgoPipe,
     CartComponent,
+    CartItemComponent,
   ],
   imports: [
     BrowserModule,
