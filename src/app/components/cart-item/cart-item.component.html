@@ -1,0 +1,24 @@
+<section class="cart_item">
+  <div class="cart_item_image">
+    <img [src]="product.images[0]" alt={{product.title}} />
+  </div>
+  <section class="cart_item_info">
+    <div class="cart_item_info_box">
+      <h2 class="cart_item_info_box_title">{{ product.title }}</h2>
+      <p class="cart_item_info_box_description">{{ product.description }}</p>
+    </div>
+    <div class="cart_item_info_qty_price">
+      <div>
+        <div class="quantity">
+          <span class="quantity_change" (click)="quantitySubtract()">-</span>
+          <span class="quantity_number">{{ product.quantity }}</span>
+          <span class="quantity_change" (click)="quantityAddition()">+</span>
+        </div>
+        <p>{{ totalPrice() | currency:"USD" }}</p>
+      </div>
+      <span class="delete" (click)="deleteProduct()">
+        <img src="./assets/svg/trash.svg" alt="trash icon to delete item">
+      </span>
+    </div>
+  </section>
+</section>

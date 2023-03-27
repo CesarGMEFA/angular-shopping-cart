@@ -19,7 +19,6 @@ export class ImgComponent {
   @Input()
   set changeImg(newImg: string) {
     this.img = newImg
-    // console.log("change image => ",this.img)
   }
 
   imgError() {

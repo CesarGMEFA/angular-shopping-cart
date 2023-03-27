@@ -20,7 +20,6 @@ export class NavComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.storeService.myCart$.subscribe( d => {
       this.counter = d.length
-      console.log(`Cambiando => ${d.length}`)
     })
   }
 
